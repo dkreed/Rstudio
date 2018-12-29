@@ -1,0 +1,963 @@
+library(ggplot2)
+
+dfm <- read.csv("dfm.csv", header = TRUE)
+dfy <- read.csv("dfy.csv", header = TRUE)
+
+sikympetemyetsur <- dfy %>%
+  select(PR_Pid,PR_Info)
+
+df4 <- dfm %>%
+  select(13,6)
+names(df4) <- c("PR_Pid","PR_sumPid")
+df4 = df4[-1,]
+
+sikympetemshivyk <- df4[!(is.na(df4$PR_Pid) | df4$PR_Pid == ""),]
+sikympetemshivyk = sikympetemshivyk[-1,]
+
+colnames(yetsur)[colnames(yetsur)=="a"] <- "PR_sumbyPid" 
+
+xm <- sikympetemyetsur$PR_Pid
+ym <- sikympetemyetsur$PR_Info
+
+l <- data.frame(df4$PR_Pid,df4$PR_sumPid)
+data.frame(l)
+sikympetemshivyk <- l[!(is.na(df4$PR_Pid) | df4$PR_Pid == ""),]
+
+sh501 <- filter(sikympetemshivyk,df4.PR_Pid == "501")
+bsh501 <- sh501[2]
+bsh501 <- as.character.numeric_version(bsh501)
+bsh501 <- as.numeric(bsh501)
+
+sh502 <- filter(sikympetemshivyk,df4.PR_Pid == "502")
+bsh502 <- sh502[2]
+bsh502 <- as.character.numeric_version(bsh502)
+bsh502 <- as.numeric(bsh502)
+
+sh503 <- filter(sikympetemshivyk,df4.PR_Pid == "503")
+bsh503 <- sh503[2]
+bsh503 <- as.character.numeric_version(bsh503)
+bsh503 <- as.numeric(bsh503)
+
+sh504 <- filter(sikympetemshivyk,df4.PR_Pid == "504")
+bsh504 <- sh504[2]
+bsh504 <- as.character.numeric_version(bsh504)
+bsh504 <- as.numeric(bsh504)
+
+sh505 <- filter(sikympetemshivyk,df4.PR_Pid == "505")
+bsh505 <- sh505[2]
+bsh505 <- as.character.numeric_version(bsh505)
+bsh505 <- as.numeric(bsh505)
+
+sh506 <- filter(sikympetemshivyk,df4.PR_Pid == "506")
+bsh506 <- sh506[2]
+bsh506 <- as.character.numeric_version(bsh506)
+bsh506 <- as.numeric(bsh506)
+
+sh507 <- filter(sikympetemshivyk,df4.PR_Pid == "507")
+bsh507 <- sh507[2]
+bsh507 <- as.character.numeric_version(bsh507)
+bsh507 <- as.numeric(bsh507)
+
+sh509 <- filter(sikympetemshivyk,df4.PR_Pid == "509")
+bsh509 <- sh509[2]
+bsh509 <- as.character.numeric_version(bsh509)
+bsh509 <- as.numeric(bsh509)
+
+sh510 <- filter(sikympetemshivyk,df4.PR_Pid == "510")
+bsh510 <- sh510[2]
+bsh510 <- as.character.numeric_version(bsh510)
+bsh510 <- as.numeric(bsh510)
+
+sh511 <- filter(sikympetemshivyk,df4.PR_Pid == "511")
+bsh511 <- sh511[2]
+bsh511 <- as.character.numeric_version(bsh511)
+bsh511 <- as.numeric(bsh511)
+
+sh512 <- filter(sikympetemshivyk,df4.PR_Pid == "512")
+bsh512 <- sh512[2]
+bsh512 <- as.character.numeric_version(bsh512)
+bsh512 <- as.numeric(bsh512)
+
+sh513 <- filter(sikympetemshivyk,df4.PR_Pid == "513")
+bsh513 <- sh513[2]
+bsh513 <- as.character.numeric_version(bsh513)
+bsh513 <- as.numeric(bsh513)
+
+sh514 <- filter(sikympetemshivyk,df4.PR_Pid == "514")
+bsh514 <- sh514[2]
+bsh514 <- as.character.numeric_version(bsh514)
+bsh514 <- as.numeric(bsh514)
+
+sh515 <- filter(sikympetemshivyk,df4.PR_Pid == "515")
+bsh515 <- sh515[2]
+bsh515 <- as.character.numeric_version(bsh515)
+bsh515 <- as.numeric(bsh515)
+
+sh516 <- filter(sikympetemshivyk,df4.PR_Pid == "516")
+bsh516 <- sh516[2]
+bsh516 <- as.character.numeric_version(bsh516)
+bsh516 <- as.numeric(bsh516)
+
+sh518 <- filter(sikympetemshivyk,df4.PR_Pid == "518")
+bsh518 <- sh518[2]
+bsh518 <- as.character.numeric_version(bsh518)
+bsh518 <- as.numeric(bsh518)
+
+sh519 <- filter(sikympetemshivyk,df4.PR_Pid == "519")
+bsh519 <- sh519[2]
+bsh519 <- as.character.numeric_version(bsh519)
+bsh519 <- as.numeric(bsh519)
+
+sh546 <- filter(sikympetemshivyk,df4.PR_Pid == "546")
+bsh546 <- sh546[2]
+bsh546 <- as.character.numeric_version(bsh546)
+bsh546 <- as.numeric(bsh546)
+
+b501 <- length(which(xm=="501"))
+b502 <- length(which(xm=="502"))
+b503 <- length(which(xm=="503"))
+b504 <- length(which(xm=="504"))
+b505 <- length(which(xm=="505"))
+b506 <- length(which(xm=="506"))
+b507 <- length(which(xm=="507"))
+b509 <- length(which(xm=="509"))
+b510 <- length(which(xm=="510"))
+b511 <- length(which(xm=="511"))
+b512 <- length(which(xm=="512"))
+b513 <- length(which(xm=="513"))
+b514 <- length(which(xm=="514"))
+b515 <- length(which(xm=="515"))
+b516 <- length(which(xm=="516"))
+b518 <- length(which(xm=="518"))
+b519 <- length(which(xm=="519"))
+b546 <- length(which(xm=="546"))
+
+df1 <- data.frame(
+  x = factor(c(501,501,502,502,503,503,504,504,505,505,506,506,507,
+               507,509,509,510,510,511,511,512,512,513,513,514,514,
+               515,515,516,516,518,518,519,519,546,546)),
+  y = c(b501,bsh501,b502,bsh502,b503,bsh503,b504,bsh504,
+        b505,bsh505,b506,bsh506,b507,bsh507,b509,bsh509,
+        b510,bsh510,b511,bsh511,b512,bsh512,b513,bsh513,
+        b514,bsh514,b515,bsh515,b516,bsh516,b518,bsh518,
+        b519,bsh519,b546,bsh546),
+  grp = c("bitsua","sales","bitsua","sales","bitsua",
+          "sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales", "bitsua"
+          ,"sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales","bitsua",
+          "sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales","bitsua"
+          ,"sales")
+)
+
+plot1 <- ggplot(data = df1, aes(x,y,group = grp)) +
+  geom_col(aes(fill = grp), position = "dodge") +
+  geom_text(aes(label =y), position = position_dodge(width = 0.9))
+
+plot1
+
+
+sh517 <- filter(sikympetemshivyk,df4.PR_Pid == "517")
+bsh517 <- sh517[2]
+bsh517 <- as.character.numeric_version(bsh517)
+bsh517 <- as.numeric(bsh517)
+
+sh520 <- filter(sikympetemshivyk,df4.PR_Pid == "520")
+bsh520 <- sh520[2]
+bsh520 <- as.character.numeric_version(bsh520)
+bsh520 <- as.numeric(bsh520)
+
+sh521 <- filter(sikympetemshivyk,df4.PR_Pid == "521")
+bsh521 <- sh521[2]
+bsh521 <- as.character.numeric_version(bsh521)
+bsh521 <- as.numeric(bsh521)
+
+sh522 <- filter(sikympetemshivyk,df4.PR_Pid == "522")
+bsh522 <- sh522[2]
+bsh522 <- as.character.numeric_version(bsh522)
+bsh522 <- as.numeric(bsh522)
+
+sh523 <- filter(sikympetemshivyk,df4.PR_Pid == "523")
+bsh523 <- sh523[2]
+bsh523 <- as.character.numeric_version(bsh523)
+bsh523 <- as.numeric(bsh523)
+
+sh524 <- filter(sikympetemshivyk,df4.PR_Pid == "524")
+bsh524 <- sh524[2]
+bsh524 <- as.character.numeric_version(bsh524)
+bsh524 <- as.numeric(bsh524)
+
+sh525 <- filter(sikympetemshivyk,df4.PR_Pid == "525")
+bsh525 <- sh525[2]
+bsh525 <- as.character.numeric_version(bsh525)
+bsh525 <- as.numeric(bsh525)
+
+sh526 <- filter(sikympetemshivyk,df4.PR_Pid == "526")
+bsh526 <- sh526[2]
+bsh526 <- as.character.numeric_version(bsh526)
+bsh526 <- as.numeric(bsh526)
+
+sh527 <- filter(sikympetemshivyk,df4.PR_Pid == "527")
+bsh527 <- sh527[2]
+bsh527 <- as.character.numeric_version(bsh527)
+bsh527 <- as.numeric(bsh527)
+
+sh528 <- filter(sikympetemshivyk,df4.PR_Pid == "528")
+bsh528 <- sh528[2]
+bsh528 <- as.character.numeric_version(bsh528)
+bsh528 <- as.numeric(bsh528)
+
+sh529 <- filter(sikympetemshivyk,df4.PR_Pid == "529")
+bsh529 <- sh529[2]
+bsh529 <- as.character.numeric_version(bsh529)
+bsh529 <- as.numeric(bsh529)
+
+sh530 <- filter(sikympetemshivyk,df4.PR_Pid == "530")
+bsh530 <- sh530[2]
+bsh530 <- as.character.numeric_version(bsh530)
+bsh530 <- as.numeric(bsh530)
+
+sh531 <- filter(sikympetemshivyk,df4.PR_Pid == "531")
+bsh531 <- sh531[2]
+bsh531 <- as.character.numeric_version(bsh531)
+bsh531 <- as.numeric(bsh531)
+
+sh532 <- filter(sikympetemshivyk,df4.PR_Pid == "532")
+bsh532 <- sh532[2]
+bsh532 <- as.character.numeric_version(bsh532)
+bsh532 <- as.numeric(bsh532)
+
+sh533 <- filter(sikympetemshivyk,df4.PR_Pid == "533")
+bsh533 <- sh533[2]
+bsh533 <- as.character.numeric_version(bsh533)
+bsh533 <- as.numeric(bsh533)
+
+sh534 <- filter(sikympetemshivyk,df4.PR_Pid == "534")
+bsh534 <- sh534[2]
+bsh534 <- as.character.numeric_version(bsh534)
+bsh534 <- as.numeric(bsh534)
+
+sh535 <- filter(sikympetemshivyk,df4.PR_Pid == "535")
+bsh535 <- sh535[2]
+bsh535 <- as.character.numeric_version(bsh535)
+bsh535 <- as.numeric(bsh535)
+
+sh547 <- filter(sikympetemshivyk,df4.PR_Pid == "547")
+bsh547 <- sh547[2]
+bsh547 <- as.character.numeric_version(bsh547)
+bsh547 <- as.numeric(bsh547)
+
+sh558 <- filter(sikympetemshivyk,df4.PR_Pid == "558")
+bsh558 <- sh558[2]
+bsh558 <- as.character.numeric_version(bsh558)
+bsh558 <- as.numeric(bsh558)
+
+sh560 <- filter(sikympetemshivyk,df4.PR_Pid == "560")
+bsh560 <- sh560[2]
+bsh560 <- as.character.numeric_version(bsh560)
+bsh560 <- as.numeric(bsh560)
+
+b517 <- length(which(xm=="517"))
+b520 <- length(which(xm=="520"))
+b521 <- length(which(xm=="521"))
+b522 <- length(which(xm=="522"))
+b523 <- length(which(xm=="523"))
+b524 <- length(which(xm=="524"))
+b525 <- length(which(xm=="525"))
+b526 <- length(which(xm=="526"))
+b527 <- length(which(xm=="527"))
+b528 <- length(which(xm=="528"))
+b529 <- length(which(xm=="529"))
+b530 <- length(which(xm=="530"))
+b531 <- length(which(xm=="531"))
+b532 <- length(which(xm=="532"))
+b533 <- length(which(xm=="533"))
+b534 <- length(which(xm=="534"))
+b535 <- length(which(xm=="535"))
+b547 <- length(which(xm=="547"))
+b558 <- length(which(xm=="558"))
+b560 <- length(which(xm=="560"))
+
+df2 <- data.frame(
+  x = factor(c(517,517,520,520,521,521,522,522,523,523,
+               524,524,525,525,526,526,527,527,528,528,
+               529,529,530,530,531,531,532,532,533,533,
+               534,534,535,535,547,547,558,558,560,560)),
+  y = c(b517,bsh517,b520,bsh520,b521,bsh521,b522,bsh522,
+        b523,bsh523,b524,bsh524,b525,bsh525,b526,bsh526,
+        b527,bsh527,b528,bsh528,b529,bsh529,b530,bsh530,
+        b531,bsh531,b532,bsh532,b533,bsh533,b534,bsh534,
+        b535,bsh535,b547,bsh547,b558,bsh558,b560,bsh560),
+  grp = c("bitsua","sales","bitsua","sales","bitsua","sales"
+          ,"bitsua","sales","bitsua","sales","bitsua","sales"
+          ,"bitsua","sales", "bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales")
+)
+
+plot2 <- ggplot(data = df2, aes(x,y,group = grp)) +
+  geom_col(aes(fill = grp), position = "dodge") +
+  geom_text(aes(label =y), position = position_dodge(width = 0.9))
+
+plot2
+
+sh569 <- filter(sikympetemshivyk,df4.PR_Pid == "569")
+bsh569 <- sh569[2]
+bsh569 <- as.character.numeric_version(bsh569)
+bsh569 <- as.numeric(bsh569)
+
+sh582 <- filter(sikympetemshivyk,df4.PR_Pid == "582")
+bsh582 <- sh582[2]
+bsh582 <- as.character.numeric_version(bsh582)
+bsh582 <- as.numeric(bsh582)
+
+sh583 <- filter(sikympetemshivyk,df4.PR_Pid == "583")
+bsh583 <- sh583[2]
+bsh583 <- as.character.numeric_version(bsh583)
+bsh583 <- as.numeric(bsh583)
+
+sh584 <- filter(sikympetemshivyk,df4.PR_Pid == "584")
+bsh584 <- sh584[2]
+bsh584 <- as.character.numeric_version(bsh584)
+bsh584 <- as.numeric(bsh584)
+
+sh585 <- filter(sikympetemshivyk,df4.PR_Pid == "585")
+bsh585 <- sh585[2]
+bsh585 <- as.character.numeric_version(bsh585)
+bsh585 <- as.numeric(bsh585)
+
+sh586 <- filter(sikympetemshivyk,df4.PR_Pid == "586")
+bsh586 <- sh586[2]
+bsh586 <- as.character.numeric_version(bsh586)
+bsh586 <- as.numeric(bsh586)
+
+sh587 <- filter(sikympetemshivyk,df4.PR_Pid == "587")
+bsh587 <- sh587[2]
+bsh587 <- as.character.numeric_version(bsh587)
+bsh587 <- as.numeric(bsh587)
+
+sh588 <- filter(sikympetemshivyk,df4.PR_Pid == "588")
+bsh588 <- sh588[2]
+bsh588 <- as.character.numeric_version(bsh588)
+bsh588 <- as.numeric(bsh588)
+
+sh589 <- filter(sikympetemshivyk,df4.PR_Pid == "589")
+bsh589 <- sh589[2]
+bsh589 <- as.character.numeric_version(bsh589)
+bsh589 <- as.numeric(bsh589)
+
+sh590 <- filter(sikympetemshivyk,df4.PR_Pid == "590")
+bsh590 <- sh590[2]
+bsh590 <- as.character.numeric_version(bsh590)
+bsh590 <- as.numeric(bsh590)
+
+sh591 <- filter(sikympetemshivyk,df4.PR_Pid == "591")
+bsh591 <- sh591[2]
+bsh591 <- as.character.numeric_version(bsh591)
+bsh591 <- as.numeric(bsh591)
+
+sh592 <- filter(sikympetemshivyk,df4.PR_Pid == "592")
+bsh592 <- sh592[2]
+bsh592 <- as.character.numeric_version(bsh592)
+bsh592 <- as.numeric(bsh592)
+
+
+b569 <- length(which(xm=="569"))
+b582 <- length(which(xm=="582"))
+b583 <- length(which(xm=="583"))
+b584 <- length(which(xm=="584"))
+b585 <- length(which(xm=="585"))
+b586 <- length(which(xm=="586"))
+b587 <- length(which(xm=="587"))
+b588 <- length(which(xm=="588"))
+b589 <- length(which(xm=="589"))
+b590 <- length(which(xm=="590"))
+b591 <- length(which(xm=="591"))
+b592 <- length(which(xm=="592"))
+
+df3 <- data.frame(
+  x = factor(c(569,569,582,582,583,583,584,584,585,585,586,586,587,
+               587,588,588,589,589,590,590,591,591,592,592)),
+  y = c(b569,bsh569,b582,bsh582,b583,bsh583,b584,bsh584,
+        b585,bsh585,b586,bsh586,b587,bsh587,b588,bsh588,
+        b589,bsh589,b590,bsh590,b591,bsh591,b592,bsh592
+       ),
+  grp = c("bitsua","sales","bitsua","sales","bitsua",
+          "sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales", "bitsua"
+          ,"sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales")
+)
+
+plot3 <- ggplot(data = df3, aes(x,y,group = grp)) +
+  geom_col(aes(fill = grp), position = "dodge") +
+  geom_text(aes(label =y), position = position_dodge(width = 0.9))
+
+plot3
+
+sh714 <- filter(sikympetemshivyk,df4.PR_Pid == "714")
+bsh714 <- sh714[2]
+bsh714 <- as.character.numeric_version(bsh714)
+bsh714 <- as.numeric(bsh714)
+
+sh715 <- filter(sikympetemshivyk,df4.PR_Pid == "715")
+bsh715 <- sh715[2]
+bsh715 <- as.character.numeric_version(bsh715)
+bsh715 <- as.numeric(bsh715)
+
+sh716 <- filter(sikympetemshivyk,df4.PR_Pid == "716")
+bsh716 <- sh716[2]
+bsh716 <- as.character.numeric_version(bsh716)
+bsh716 <- as.numeric(bsh716)
+
+sh717 <- filter(sikympetemshivyk,df4.PR_Pid == "717")
+bsh717 <- sh717[2]
+bsh717 <- as.character.numeric_version(bsh717)
+bsh717 <- as.numeric(bsh717)
+
+sh718 <- filter(sikympetemshivyk,df4.PR_Pid == "718")
+bsh718 <- sh718[2]
+bsh718 <- as.character.numeric_version(bsh718)
+bsh718 <- as.numeric(bsh718)
+
+sh719 <- filter(sikympetemshivyk,df4.PR_Pid == "719")
+bsh719 <- sh719[2]
+bsh719 <- as.character.numeric_version(bsh719)
+bsh719 <- as.numeric(bsh719)
+
+sh720 <- filter(sikympetemshivyk,df4.PR_Pid == "720")
+bsh720 <- sh720[2]
+bsh720 <- as.character.numeric_version(bsh720)
+bsh720 <- as.numeric(bsh720)
+
+sh721 <- filter(sikympetemshivyk,df4.PR_Pid == "721")
+bsh721 <- sh721[2]
+bsh721 <- as.character.numeric_version(bsh721)
+bsh721 <- as.numeric(bsh721)
+
+sh722 <- filter(sikympetemshivyk,df4.PR_Pid == "722")
+bsh722 <- sh722[2]
+bsh722 <- as.character.numeric_version(bsh722)
+bsh722 <- as.numeric(bsh722)
+
+sh723 <- filter(sikympetemshivyk,df4.PR_Pid == "723")
+bsh723 <- sh723[2]
+bsh723 <- as.character.numeric_version(bsh723)
+bsh723 <- as.numeric(bsh723)
+
+sh724 <- filter(sikympetemshivyk,df4.PR_Pid == "724")
+bsh724 <- sh724[2]
+bsh724 <- as.character.numeric_version(bsh724)
+bsh724 <- as.numeric(bsh724)
+
+sh725 <- filter(sikympetemshivyk,df4.PR_Pid == "725")
+bsh725 <- sh725[2]
+bsh725 <- as.character.numeric_version(bsh725)
+bsh725 <- as.numeric(bsh725)
+
+sh726 <- filter(sikympetemshivyk,df4.PR_Pid == "726")
+bsh726 <- sh726[2]
+bsh726 <- as.character.numeric_version(bsh726)
+bsh726 <- as.numeric(bsh726)
+
+sh727 <- filter(sikympetemshivyk,df4.PR_Pid == "727")
+bsh727 <- sh727[2]
+bsh727 <- as.character.numeric_version(bsh727)
+bsh727 <- as.numeric(bsh727)
+
+sh728 <- filter(sikympetemshivyk,df4.PR_Pid == "728")
+bsh728 <- sh728[2]
+bsh728 <- as.character.numeric_version(bsh728)
+bsh728 <- as.numeric(bsh728)
+
+sh729 <- filter(sikympetemshivyk,df4.PR_Pid == "729")
+bsh729 <- sh729[2]
+bsh729 <- as.character.numeric_version(bsh729)
+bsh729 <- as.numeric(bsh729)
+
+sh758 <- filter(sikympetemshivyk,df4.PR_Pid == "758")
+bsh758 <- sh758[2]
+bsh758 <- as.character.numeric_version(bsh758)
+bsh758 <- as.numeric(bsh758)
+
+b714 <- length(which(xm=="714"))
+b715 <- length(which(xm=="715"))
+b716 <- length(which(xm=="716"))
+b717 <- length(which(xm=="717"))
+b718 <- length(which(xm=="718"))
+b719 <- length(which(xm=="719"))
+b720 <- length(which(xm=="720"))
+b721 <- length(which(xm=="721"))
+b722 <- length(which(xm=="722"))
+b723 <- length(which(xm=="723"))
+b724 <- length(which(xm=="724"))
+b725 <- length(which(xm=="725"))
+b726 <- length(which(xm=="726"))
+b727 <- length(which(xm=="727"))
+b728 <- length(which(xm=="728"))
+b729 <- length(which(xm=="729"))
+b758 <- length(which(xm=="758"))
+
+df4 <- data.frame(
+  x = factor(c(714,714,715,715,716,716,717,717,718,718,719,719,720,
+               720,721,721,722,722,723,723,724,724,725,725,726,726,
+               727,727,728,728,729,729,758,758)),
+  y = c(b714,bsh714,b715,bsh715,b716,bsh716,b717,bsh717,
+        b718,bsh718,b719,bsh719,b720,bsh720,b721,bsh721,
+        b722,bsh722,b723,bsh723,b724,bsh724,b725,bsh725,
+        b726,bsh726,b727,bsh727,b728,bsh728,b729,bsh729,
+        b758,bsh758),
+  grp = c("bitsua","sales","bitsua","sales","bitsua",
+          "sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales", "bitsua"
+          ,"sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales","bitsua",
+          "sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales")
+)
+
+plot4 <- ggplot(data = df4, aes(x,y,group = grp)) +
+  geom_col(aes(fill = grp), position = "dodge") +
+  geom_text(aes(label =y), position = position_dodge(width = 0.9))
+
+plot4
+
+
+sh740 <- filter(sikympetemshivyk,df4.PR_Pid == "740")
+bsh740 <- sh740[2]
+bsh740 <- as.character.numeric_version(bsh740)
+bsh740 <- as.numeric(bsh740)
+
+sh741 <- filter(sikympetemshivyk,df4.PR_Pid == "741")
+bsh741 <- sh741[2]
+bsh741 <- as.character.numeric_version(bsh741)
+bsh741 <- as.numeric(bsh741)
+
+sh742 <- filter(sikympetemshivyk,df4.PR_Pid == "742")
+bsh742 <- sh742[2]
+bsh742 <- as.character.numeric_version(bsh742)
+bsh742 <- as.numeric(bsh742)
+
+sh743 <- filter(sikympetemshivyk,df4.PR_Pid == "743")
+bsh743 <- sh743[2]
+bsh743 <- as.character.numeric_version(bsh743)
+bsh743 <- as.numeric(bsh743)
+
+sh744 <- filter(sikympetemshivyk,df4.PR_Pid == "744")
+bsh744 <- sh744[2]
+bsh744 <- as.character.numeric_version(bsh744)
+bsh744 <- as.numeric(bsh744)
+
+sh745 <- filter(sikympetemshivyk,df4.PR_Pid == "745")
+bsh745 <- sh745[2]
+bsh745 <- as.character.numeric_version(bsh745)
+bsh745 <- as.numeric(bsh745)
+
+sh746 <- filter(sikympetemshivyk,df4.PR_Pid == "746")
+bsh746 <- sh746[2]
+bsh746 <- as.character.numeric_version(bsh746)
+bsh746 <- as.numeric(bsh746)
+
+sh747 <- filter(sikympetemshivyk,df4.PR_Pid == "747")
+bsh747 <- sh747[2]
+bsh747 <- as.character.numeric_version(bsh747)
+bsh747 <- as.numeric(bsh747)
+
+sh748 <- filter(sikympetemshivyk,df4.PR_Pid == "748")
+bsh748 <- sh748[2]
+bsh748 <- as.character.numeric_version(bsh748)
+bsh748 <- as.numeric(bsh748)
+
+sh749 <- filter(sikympetemshivyk,df4.PR_Pid == "749")
+bsh749 <- sh749[2]
+bsh749 <- as.character.numeric_version(bsh749)
+bsh749 <- as.numeric(bsh749)
+
+sh750 <- filter(sikympetemshivyk,df4.PR_Pid == "750")
+bsh750 <- sh750[2]
+bsh750 <- as.character.numeric_version(bsh750)
+bsh750 <- as.numeric(bsh750)
+
+sh751 <- filter(sikympetemshivyk,df4.PR_Pid == "751")
+bsh751 <- sh751[2]
+bsh751 <- as.character.numeric_version(bsh751)
+bsh751 <- as.numeric(bsh751)
+
+sh752 <- filter(sikympetemshivyk,df4.PR_Pid == "752")
+bsh752 <- sh752[2]
+bsh752 <- as.character.numeric_version(bsh752)
+bsh752 <- as.numeric(bsh752)
+
+sh753 <- filter(sikympetemshivyk,df4.PR_Pid == "753")
+bsh753 <- sh753[2]
+bsh753 <- as.character.numeric_version(bsh753)
+bsh753 <- as.numeric(bsh753)
+
+sh754 <- filter(sikympetemshivyk,df4.PR_Pid == "754")
+bsh754 <- sh754[2]
+bsh754 <- as.character.numeric_version(bsh754)
+bsh754 <- as.numeric(bsh754)
+
+sh755 <- filter(sikympetemshivyk,df4.PR_Pid == "755")
+bsh755 <- sh755[2]
+bsh755 <- as.character.numeric_version(bsh755)
+bsh755 <- as.numeric(bsh755)
+
+sh756 <- filter(sikympetemshivyk,df4.PR_Pid == "756")
+bsh756 <- sh756[2]
+bsh756 <- as.character.numeric_version(bsh756)
+bsh756 <- as.numeric(bsh756)
+
+sh757 <- filter(sikympetemshivyk,df4.PR_Pid == "757")
+bsh757 <- sh757[2]
+bsh757 <- as.character.numeric_version(bsh757)
+bsh757 <- as.numeric(bsh757)
+
+sh758 <- filter(sikympetemshivyk,df4.PR_Pid == "758")
+bsh758 <- sh758[2]
+bsh758 <- as.character.numeric_version(bsh758)
+bsh758 <- as.numeric(bsh758)
+
+b740 <- length(which(xm=="740"))
+b741 <- length(which(xm=="741"))
+b742 <- length(which(xm=="742"))
+b743 <- length(which(xm=="743"))
+b744 <- length(which(xm=="744"))
+b745 <- length(which(xm=="745"))
+b746 <- length(which(xm=="746"))
+b747 <- length(which(xm=="747"))
+b748 <- length(which(xm=="748"))
+b749 <- length(which(xm=="749"))
+b750 <- length(which(xm=="750"))
+b751 <- length(which(xm=="751"))
+b752 <- length(which(xm=="752"))
+b753 <- length(which(xm=="753"))
+b754 <- length(which(xm=="754"))
+b755 <- length(which(xm=="755"))
+b756 <- length(which(xm=="756"))
+b757 <- length(which(xm=="757"))
+b758 <- length(which(xm=="758"))
+
+
+df5 <- data.frame(
+  x = factor(c(740,740,741,741,742,742,743,743,744,744,745,745,746,
+               746,747,747,748,748,749,749,750,750,751,751,752,752,
+               753,753,754,754,755,755,756,756,757,757,758,758)),
+  y = c(b740,bsh740,b741,bsh741,b742,bsh742,b743,bsh743,
+        b744,bsh744,b745,bsh745,b746,bsh746,b747,bsh747,
+        b748,bsh748,b749,bsh749,b750,bsh750,b751,bsh751,
+        b752,bsh752,b753,bsh753,b754,bsh754,b755,bsh755,
+        b756,bsh756,b757,bsh757,
+        b758,bsh758),
+  grp = c("bitsua","sales","bitsua","sales","bitsua",
+          "sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales", "bitsua"
+          ,"sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales","bitsua",
+          "sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales","bitsua","sales","bitsua","sales")
+)
+
+plot5 <- ggplot(data = df5, aes(x,y,group = grp)) +
+  geom_col(aes(fill = grp), position = "dodge") +
+  geom_text(aes(label =y), position = position_dodge(width = 0.9))
+
+plot5
+
+sh214 <- filter(sikympetemshivyk,df4.PR_Pid == "214")
+bsh214 <- sh214[2]
+bsh214 <- as.character.numeric_version(bsh214)
+bsh214 <- as.numeric(bsh214)
+
+sh216 <- filter(sikympetemshivyk,df4.PR_Pid == "216")
+bsh216 <- sh216[2]
+bsh216 <- as.character.numeric_version(bsh216)
+bsh216 <- as.numeric(bsh216)
+
+sh217 <- filter(sikympetemshivyk,df4.PR_Pid == "217")
+bsh217 <- sh217[2]
+bsh217 <- as.character.numeric_version(bsh217)
+bsh217 <- as.numeric(bsh217)
+
+sh218 <- filter(sikympetemshivyk,df4.PR_Pid == "218")
+bsh218 <- sh218[2]
+bsh218 <- as.character.numeric_version(bsh218)
+bsh218 <- as.numeric(bsh218)
+
+sh219 <- filter(sikympetemshivyk,df4.PR_Pid == "219")
+bsh219 <- sh219[2]
+bsh219 <- as.character.numeric_version(bsh219)
+bsh219 <- as.numeric(bsh219)
+
+sh220 <- filter(sikympetemshivyk,df4.PR_Pid == "220")
+bsh220 <- sh220[2]
+bsh220 <- as.character.numeric_version(bsh220)
+bsh220 <- as.numeric(bsh220)
+
+sh221 <- filter(sikympetemshivyk,df4.PR_Pid == "221")
+bsh221 <- sh221[2]
+bsh221 <- as.character.numeric_version(bsh221)
+bsh221 <- as.numeric(bsh221)
+
+sh222 <- filter(sikympetemshivyk,df4.PR_Pid == "222")
+bsh222 <- sh222[2]
+bsh222 <- as.character.numeric_version(bsh222)
+bsh222 <- as.numeric(bsh222)
+
+sh223 <- filter(sikympetemshivyk,df4.PR_Pid == "223")
+bsh223 <- sh223[2]
+bsh223 <- as.character.numeric_version(bsh223)
+bsh223 <- as.numeric(bsh223)
+
+sh224 <- filter(sikympetemshivyk,df4.PR_Pid == "224")
+bsh224 <- sh224[2]
+bsh224 <- as.character.numeric_version(bsh224)
+bsh224 <- as.numeric(bsh224)
+
+sh226 <- filter(sikympetemshivyk,df4.PR_Pid == "226")
+bsh226 <- sh226[2]
+bsh226 <- as.character.numeric_version(bsh226)
+bsh226 <- as.numeric(bsh226)
+
+sh227 <- filter(sikympetemshivyk,df4.PR_Pid == "227")
+bsh227 <- sh227[2]
+bsh227 <- as.character.numeric_version(bsh227)
+bsh227 <- as.numeric(bsh227)
+
+sh228 <- filter(sikympetemshivyk,df4.PR_Pid == "228")
+bsh228 <- sh228[2]
+bsh228 <- as.character.numeric_version(bsh228)
+bsh228 <- as.numeric(bsh228)
+
+sh230 <- filter(sikympetemshivyk,df4.PR_Pid == "230")
+bsh230 <- sh230[2]
+bsh230 <- as.character.numeric_version(bsh230)
+bsh230 <- as.numeric(bsh230)
+
+sh231 <- filter(sikympetemshivyk,df4.PR_Pid == "231")
+bsh231 <- sh231[2]
+bsh231 <- as.character.numeric_version(bsh231)
+bsh231 <- as.numeric(bsh231)
+
+sh232 <- filter(sikympetemshivyk,df4.PR_Pid == "232")
+bsh232 <- sh232[2]
+bsh232 <- as.character.numeric_version(bsh232)
+bsh232 <- as.numeric(bsh232)
+
+sh233 <- filter(sikympetemshivyk,df4.PR_Pid == "233")
+bsh233 <- sh233[2]
+bsh233 <- as.character.numeric_version(bsh233)
+bsh233 <- as.numeric(bsh233)
+
+sh234 <- filter(sikympetemshivyk,df4.PR_Pid == "234")
+bsh234 <- sh234[2]
+bsh234 <- as.character.numeric_version(bsh234)
+bsh234 <- as.numeric(bsh234)
+
+sh235 <- filter(sikympetemshivyk,df4.PR_Pid == "235")
+bsh235 <- sh235[2]
+bsh235 <- as.character.numeric_version(bsh235)
+bsh235 <- as.numeric(bsh235)
+
+sh236 <- filter(sikympetemshivyk,df4.PR_Pid == "236")
+bsh236 <- sh236[2]
+bsh236 <- as.character.numeric_version(bsh236)
+bsh236 <- as.numeric(bsh236)
+
+sh237 <- filter(sikympetemshivyk,df4.PR_Pid == "237")
+bsh237 <- sh237[2]
+bsh237 <- as.character.numeric_version(bsh237)
+bsh237 <- as.numeric(bsh237)
+
+sh238 <- filter(sikympetemshivyk,df4.PR_Pid == "238")
+bsh238 <- sh238[2]
+bsh238 <- as.character.numeric_version(bsh238)
+bsh238 <- as.numeric(bsh238)
+
+sh239 <- filter(sikympetemshivyk,df4.PR_Pid == "239")
+bsh239 <- sh239[2]
+bsh239 <- as.character.numeric_version(bsh239)
+bsh239 <- as.numeric(bsh239)
+
+sh240 <- filter(sikympetemshivyk,df4.PR_Pid == "240")
+bsh240 <- sh240[2]
+bsh240 <- as.character.numeric_version(bsh240)
+bsh240 <- as.numeric(bsh240)
+
+sh241 <- filter(sikympetemshivyk,df4.PR_Pid == "241")
+bsh241 <- sh241[2]
+bsh241 <- as.character.numeric_version(bsh241)
+bsh241 <- as.numeric(bsh241)
+
+sh242 <- filter(sikympetemshivyk,df4.PR_Pid == "242")
+bsh242 <- sh242[2]
+bsh242 <- as.character.numeric_version(bsh242)
+bsh242 <- as.numeric(bsh242)
+
+sh243 <- filter(sikympetemshivyk,df4.PR_Pid == "243")
+bsh243 <- sh243[2]
+bsh243 <- as.character.numeric_version(bsh243)
+bsh243 <- as.numeric(bsh243)
+
+sh244 <- filter(sikympetemshivyk,df4.PR_Pid == "244")
+bsh244 <- sh244[2]
+bsh244 <- as.character.numeric_version(bsh244)
+bsh244 <- as.numeric(bsh244)
+
+sh245 <- filter(sikympetemshivyk,df4.PR_Pid == "245")
+bsh245 <- sh245[2]
+bsh245 <- as.character.numeric_version(bsh245)
+bsh245 <- as.numeric(bsh245)
+
+sh246 <- filter(sikympetemshivyk,df4.PR_Pid == "246")
+bsh246 <- sh246[2]
+bsh246 <- as.character.numeric_version(bsh246)
+bsh246 <- as.numeric(bsh246)
+
+sh248 <- filter(sikympetemshivyk,df4.PR_Pid == "248")
+bsh248 <- sh248[2]
+bsh248 <- as.character.numeric_version(bsh248)
+bsh248 <- as.numeric(bsh248)
+
+sh250 <- filter(sikympetemshivyk,df4.PR_Pid == "250")
+bsh250 <- sh250[2]
+bsh250 <- as.character.numeric_version(bsh250)
+bsh250 <- as.numeric(bsh250)
+
+sh252 <- filter(sikympetemshivyk,df4.PR_Pid == "252")
+bsh252 <- sh252[2]
+bsh252 <- as.character.numeric_version(bsh252)
+bsh252 <- as.numeric(bsh252)
+
+sh253 <- filter(sikympetemshivyk,df4.PR_Pid == "253")
+bsh253 <- sh253[2]
+bsh253 <- as.character.numeric_version(bsh253)
+bsh253 <- as.numeric(bsh253)
+
+sh257 <- filter(sikympetemshivyk,df4.PR_Pid == "257")
+bsh257 <- sh257[2]
+bsh257 <- as.character.numeric_version(bsh257)
+bsh257 <- as.numeric(bsh257)
+
+sh258 <- filter(sikympetemshivyk,df4.PR_Pid == "258")
+bsh258 <- sh258[2]
+bsh258 <- as.character.numeric_version(bsh258)
+bsh258 <- as.numeric(bsh258)
+
+sh260 <- filter(sikympetemshivyk,df4.PR_Pid == "260")
+bsh260 <- sh260[2]
+bsh260 <- as.character.numeric_version(bsh260)
+bsh260 <- as.numeric(bsh260)
+
+sh261 <- filter(sikympetemshivyk,df4.PR_Pid == "261")
+bsh261 <- sh261[2]
+bsh261 <- as.character.numeric_version(bsh261)
+bsh261 <- as.numeric(bsh261)
+
+sh264 <- filter(sikympetemshivyk,df4.PR_Pid == "264")
+bsh264 <- sh264[2]
+bsh264 <- as.character.numeric_version(bsh264)
+bsh264 <- as.numeric(bsh264)
+
+sh265 <- filter(sikympetemshivyk,df4.PR_Pid == "265")
+bsh265 <- sh265[2]
+bsh265 <- as.character.numeric_version(bsh265)
+bsh265 <- as.numeric(bsh265)
+
+sh266 <- filter(sikympetemshivyk,df4.PR_Pid == "266")
+bsh266 <- sh266[2]
+bsh266 <- as.character.numeric_version(bsh266)
+bsh266 <- as.numeric(bsh266)
+
+sh269 <- filter(sikympetemshivyk,df4.PR_Pid == "269")
+bsh269 <- sh269[2]
+bsh269 <- as.character.numeric_version(bsh269)
+bsh269 <- as.numeric(bsh269)
+
+
+b214 <- length(which(xm=="214"))
+b216 <- length(which(xm=="216"))
+b217 <- length(which(xm=="217"))
+b218 <- length(which(xm=="218"))
+b219 <- length(which(xm=="219"))
+b220 <- length(which(xm=="220"))
+b221 <- length(which(xm=="221"))
+b222 <- length(which(xm=="222"))
+b223 <- length(which(xm=="223"))
+b224 <- length(which(xm=="224"))
+b226 <- length(which(xm=="226"))
+b227 <- length(which(xm=="227"))
+b228 <- length(which(xm=="228"))
+b230 <- length(which(xm=="230"))
+b231 <- length(which(xm=="231"))
+b232 <- length(which(xm=="232"))
+b233 <- length(which(xm=="233"))
+b234 <- length(which(xm=="234"))
+b235 <- length(which(xm=="235"))
+b236 <- length(which(xm=="236"))
+b237 <- length(which(xm=="237"))
+b238 <- length(which(xm=="238"))
+b239 <- length(which(xm=="239"))
+b240 <- length(which(xm=="240"))
+b241 <- length(which(xm=="241"))
+b242 <- length(which(xm=="242"))
+b243 <- length(which(xm=="243"))
+b244 <- length(which(xm=="244"))
+b245 <- length(which(xm=="245"))
+b246 <- length(which(xm=="246"))
+b248 <- length(which(xm=="248"))
+b250 <- length(which(xm=="250"))
+b252 <- length(which(xm=="252"))
+b253 <- length(which(xm=="253"))
+b257 <- length(which(xm=="257"))
+b258 <- length(which(xm=="258"))
+b260 <- length(which(xm=="260"))
+b261 <- length(which(xm=="261"))
+b264 <- length(which(xm=="264"))
+b265 <- length(which(xm=="265"))
+b266 <- length(which(xm=="266"))
+b269 <- length(which(xm=="269"))
+
+df6 <- data.frame(
+  x = factor(c(214,214,216,216,217,217,218,218,219,219,220,220,221,
+               221,222,222,223,223,224,224,226,226,227,227,228,228,
+               230,230,231,231,232,232,233,233,234,234,235,235,236,236,237,237,238,238,239,239,240,
+               240,241,241,242,242,243,243,244,244,245,245,246,246,
+               248,248,250,250,252,252,253,253,257,257,258,258,260,260,261,261,
+               264,264,265,265,266,266,269,269)),
+  y = c(b214,bsh214,b216,bsh216,b217,bsh217,b218,bsh218,
+        b219,bsh219,b220,bsh220,b221,bsh221,b222,bsh222,
+        b223,bsh223,b224,bsh224,b226,bsh226,b227,bsh227,
+        b228,bsh228,b230,bsh230,b231,bsh231,b232,bsh232,
+        b233,bsh233,b234,bsh234,b235,bsh235,b236,bsh236,b237,bsh237,
+        b238,bsh238,b239,bsh239,b240,bsh240,b241,bsh241,
+        b242,bsh242,b243,bsh243,b244,bsh244,b245,bsh245,
+        b246,bsh246,b248,bsh248,b250,bsh250,b252,bsh252,
+        b253,bsh253,b257,bsh257,b258,bsh258,b260,bsh260,
+        b261,bsh261,b264,bsh264,b265,bsh265,b266,bsh266,
+        b269,bsh269),
+  grp = c("bitsua","sales","bitsua","sales","bitsua",
+          "sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales", "bitsua"
+          ,"sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales","bitsua",
+          "sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales","bitsua","sales","bitsua","sales","bitsua",
+          "sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales", "bitsua"
+          ,"sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales","bitsua",
+          "sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales","bitsua",
+          "sales","bitsua","sales","bitsua","sales",
+          "bitsua","sales","bitsua","sales"))
+
+plot6 <- ggplot(data = df6, aes(x,y,group = grp)) +
+  geom_col(aes(fill = grp), position = "dodge") +
+  geom_text(aes(label =y), position = position_dodge(width = 0.9))
+
+plot6
